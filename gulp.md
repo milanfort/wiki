@@ -17,15 +17,15 @@
 
 4. Create an initial gulpfile.js:
 
-```
-    var project = require('./package.json');
-    var gulp = require('gulp');
+```javascript
+var project = require('./package.json');
+var gulp = require('gulp');
 
-    gulp.task('default', function() {
-        console.log('Building %s version %s', project.name, project.version);
-    });
-```   
-   
+gulp.task('default', function() {
+    console.log('Building %s version %s', project.name, project.version);
+});
+```
+
 ## Sample Tasks
 
 * Clean task:
