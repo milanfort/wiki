@@ -17,18 +17,20 @@
 
 4. Create an initial gulpfile.js:
 
+```
     var project = require('./package.json');
     var gulp = require('gulp');
 
     gulp.task('default', function() {
         console.log('Building %s version %s', project.name, project.version);
     });
-   
+```   
    
 ## Sample Tasks
 
 * Clean task:
 
+```
     npm install --save-dev del
 
     var del = require('del');
@@ -38,9 +40,11 @@
             'dist'
         ]);
     });
+```
 
 * CSS task:
 
+```
 npm install --save-dev gulp-minify-css gulp-autoprefixer gulp-rename  
 
 gulp.task('css', function () {
@@ -53,9 +57,11 @@ gulp.task('css', function () {
         }))
         .pipe(gulp.dest('dist/css/'))
 });
+```
 
 * JS task:
 
+```
 npm install --save-dev gulp-concat gulp-uglify gulp-jslint
 
 gulp.task('js', function () {
@@ -65,3 +71,4 @@ gulp.task('js', function () {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js/'));
 });
+```
