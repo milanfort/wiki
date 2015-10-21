@@ -30,21 +30,21 @@
 
 * Clean task:
 
-```
-    npm install --save-dev del
+```javascript
+npm install --save-dev del
 
-    var del = require('del');
+var del = require('del');
 
-    gulp.task('clean', function () {
-        del([
-            'dist'
-        ]);
-    });
+gulp.task('clean', function () {
+    del([
+        'dist'
+    ]);
+});
 ```
 
 * CSS task:
 
-```
+```javascript
 npm install --save-dev gulp-minify-css gulp-autoprefixer gulp-rename  
 
 gulp.task('css', function () {
@@ -61,7 +61,7 @@ gulp.task('css', function () {
 
 * JS task:
 
-```
+```javascript
 npm install --save-dev gulp-concat gulp-uglify gulp-jslint
 
 gulp.task('js', function () {
