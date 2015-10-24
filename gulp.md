@@ -47,6 +47,10 @@ gulp.task('clean', function () {
 ```javascript
 npm install --save-dev gulp-minify-css gulp-autoprefixer gulp-rename  
 
+var minify = require('gulp-minify-css');
+var rename = require('gulp-rename');
+var prefix = require('gulp-autoprefixer');
+
 gulp.task('css', function () {
     return gulp.src('src/css/main.css')
         .pipe(minify())
@@ -63,6 +67,10 @@ gulp.task('css', function () {
 
 ```javascript
 npm install --save-dev gulp-concat gulp-uglify gulp-jslint
+
+var jslint = require('gulp-jslint');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('js', function () {
     return gulp.src('src/js/**/*.js')
