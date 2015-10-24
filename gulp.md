@@ -84,13 +84,27 @@ gulp.task('js', function () {
 * HTML task:
 
 ```javascript
-npm install --save-dev gulp-htmlclean
+npm install --save-dev gulp-htmlbuild gulp-htmlclean
 
+var htmlbuild = require('gulp-htmlbuild');
 var htmlclean = require('gulp-htmlclean');
 
 gulp.task('html', function () {
     return gulp.src('src/*.html')
+        .pipe(htmlbuild({
+            js: htmlbuild.preprocess.js(function (block) {
+                block.write('js/main.min.js');
+                block.end();
+            }),
+            css: htmlbuild.preprocess.css(function (block) {
+                block.write('css/main.min.css');
+                block.end();
+            })
+        }))
         .pipe(htmlclean())
         .pipe(gulp.dest('dist'))
 });
 ```
+
+
+
