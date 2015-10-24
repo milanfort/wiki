@@ -72,3 +72,17 @@ gulp.task('js', function () {
         .pipe(gulp.dest('dist/js/'));
 });
 ```
+
+* HTML task:
+
+```javascript
+npm install --save-dev gulp-htmlclean
+
+var htmlclean = require('gulp-htmlclean');
+
+gulp.task('html', function () {
+    return gulp.src('src/*.html')
+        .pipe(htmlclean())
+        .pipe(gulp.dest('dist'))
+});
+```
