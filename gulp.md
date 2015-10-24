@@ -106,5 +106,16 @@ gulp.task('html', function () {
 });
 ```
 
+* Images task:
 
+```javascript
+npm install --save-dev gulp-imagemin
 
+var imagemin = require('gulp-imagemin');
+
+gulp.task('images', function () {
+    return gulp.src('src/images/*.png')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images/'));
+});
+```
