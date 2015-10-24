@@ -35,10 +35,8 @@ npm install --save-dev del
 
 var del = require('del');
 
-gulp.task('clean', function () {
-    del([
-        'dist'
-    ]);
+gulp.task('clean', function (done) {
+    del(['dist'], done);
 });
 ```
 
