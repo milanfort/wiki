@@ -48,7 +48,7 @@ gulp.task('clean', function () {
 npm install --save-dev gulp-minify-css gulp-autoprefixer gulp-rename  
 
 gulp.task('css', function () {
-    return gulp.src('app/css/main.css')
+    return gulp.src('src/css/main.css')
         .pipe(minify())
         .pipe(rename('main.min.css'))
         .pipe(prefix({
@@ -65,7 +65,7 @@ gulp.task('css', function () {
 npm install --save-dev gulp-concat gulp-uglify gulp-jslint
 
 gulp.task('js', function () {
-    return gulp.src('app/js/**/*.js')
+    return gulp.src('src/js/**/*.js')
         .pipe(jslint())
         .pipe(concat('main.min.js'))
         .pipe(uglify())
