@@ -64,15 +64,18 @@ gulp.task('css', function () {
 * JS task:
 
 ```javascript
-npm install --save-dev gulp-concat gulp-uglify gulp-jslint
+npm install --save-dev gulp-concat gulp-uglify gulp-jslint main-bower-files
 
 var jslint = require('gulp-jslint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var mainBowerFiles = require('main-bower-files');
 
 gulp.task('js', function () {
-    return gulp.src('src/js/**/*.js')
-        .pipe(jslint())
+    var glob = mainBowerFiles('**/*.js');
+    glob.push('src/js/**/*.js');
+    return gulp.src(glob)
+        //.pipe(jslint())
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js/'));
@@ -115,5 +118,19 @@ gulp.task('images', function () {
     return gulp.src('src/images/*.png')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images/'));
+});
+```
+
+* Bower task:
+
+```javascript
+npm install --save-dev wiredep
+
+var wiredep = require('wiredep').stream;
+
+gulp.task('bower', function() {
+    return gulp.src('src/*.html')
+        .pipe(wiredep())
+        .pipe(gulp.dest('src'))
 });
 ```
