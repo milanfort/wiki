@@ -64,9 +64,10 @@ gulp.task('css', function () {
 * JS task:
 
 ```javascript
-npm install --save-dev gulp-concat gulp-uglify gulp-jslint main-bower-files
+npm install --save-dev gulp-deporder gulp-concat gulp-uglify gulp-jslint main-bower-files
 
 var jslint = require('gulp-jslint');
+var deporder = require('gulp-deporder');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var mainBowerFiles = require('main-bower-files');
@@ -76,6 +77,7 @@ gulp.task('js', function () {
     glob.push('src/js/**/*.js');
     return gulp.src(glob)
         //.pipe(jslint())
+        .pipe(deporder())
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js/'));
