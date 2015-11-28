@@ -109,6 +109,20 @@ gulp.task('html', function () {
 });
 ```
 
+* A11Y task:
+
+```javascript
+npm install --save-dev gulp-a11y
+
+var a11y = require('gulp-a11y');
+
+gulp.task('a11y', function () {
+    return gulp.src('src/*.html')
+        .pipe(a11y())
+        .pipe(a11y.reporter());
+});
+```
+
 * Images task:
 
 ```javascript
