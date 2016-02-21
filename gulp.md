@@ -150,3 +150,17 @@ gulp.task('bower', function() {
         .pipe(gulp.dest('src'))
 });
 ```
+
+* JSDoc task:
+
+```javascript
+npm install --save-dev gulp-jsdoc3
+
+var jsdoc = require('gulp-jsdoc3');
+
+gulp.task('docs', function (cb) {
+    var config = require('./jsdoc.json');
+    gulp.src(['README.md', 'src/js/**/*.js'], {read: false})
+        .pipe(jsdoc(config, cb));
+});
+```
