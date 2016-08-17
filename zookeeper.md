@@ -1,6 +1,6 @@
-# ZooKeeper
+# Apache ZooKeeper
 
-## Installation (Single Development Machine)
+## Installation (Single Development Machine, Three Instance Ensemble)
 
 * Download and extract the zookeeper distribution (e.g. `zookeeper-3.4.6.tar.gz`).
 
