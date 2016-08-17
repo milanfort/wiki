@@ -34,8 +34,30 @@
 2. In both _kafka*_ directories, run the following command:  
 `bin/kafka-server-start.sh config/server.properties &`
 
+3. To stop kafka, run the following command in both directories:
+`bin/kafka-server-stop.sh` 
+
 
 ## Creating New Topic
 
-1. To create a new topic named _foobar_, with 2 partitions and replication factor 2, run the following command:
-`bin/kafka-topics.sh --create --zookeeper localhost:2181,localhost:3181,localhost:4181 --replication-factor 2 --partitions 2 --topic foobar`
+* To create a new topic named _foobar_, with 2 partitions and replication factor 2, run the following command:
+`bin/kafka-topics.sh --create --if-not-exists --zookeeper localhost:2181,localhost:3181,localhost:4181 --replication-factor 2 --partitions 2 --topic foobar`
+
+
+## List All Existing Topics
+
+* `bin/kafka-topics.sh --list --zookeeper localhost:2181,localhost:3181,localhost:4181`
+
+
+## Describe an Existing Topic
+
+* To print information about the topic _foobar_, run the following command:
+
+`bin/kafka-topics.sh --describe --zookeeper localhost:2181,localhost:3181,localhost:4181 --topic foobar`
+
+
+## Use Console Producer and Consumer
+
+* `bin/kafka-console-producer.sh --broker-list localhost:9093,localhost:9094 --topic foobar`
+
+* `bin/kafka-console-consumer.sh --zookeeper localhost:2181,localhost:3181,localhost:4181 --from-beginning --topic foobar`
