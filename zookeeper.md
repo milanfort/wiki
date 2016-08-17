@@ -43,4 +43,4 @@ Node: do not cd into `bin` or otherwise the `data` directory will not be found.
 
 ## Monitoring ZooKeeper
 
-* To start the command line interface, run 'bin/zkCli.sh'. 
+* To start the command line interface, run `bin/zkCli.sh`. 
