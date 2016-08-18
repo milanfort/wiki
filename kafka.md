@@ -13,7 +13,7 @@
 4. In directory `kafka1/config` edit the file `server.properties`. Set the following values:
 ```
     broker.id=1
-    listeners=PLAINTEXT://localhost:9093
+    listeners=PLAINTEXT://:9093
     log.dirs=data    
     zookeeper.connect=localhost:2181,localhost:3181,localhost:4181
 ```
@@ -21,7 +21,7 @@
 5. Analogously, in directory `kafka2/config` edit the file `server.properties`. Set the following values:
 ```
     broker.id=2
-    listeners=PLAINTEXT://localhost:9094
+    listeners=PLAINTEXT://:9094
     log.dirs=data
     zookeeper.connect=localhost:2181,localhost:3181,localhost:4181
 ```
