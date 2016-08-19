@@ -36,7 +36,7 @@ to disable logging to console, and enable rolling file appender.
 
 * To start each ZooKeeper instance as a background process, run the following command in each 
 _zk*_ directory in turn: `bin/zkServer.sh start`.
-Node: do not cd into `bin` or otherwise the `data` directory will not be found.
+Note: do not cd into `bin` or otherwise the `data` directory will not be found.
 
 * To stop each zookeeper instance, run `bin/zkServer.sh stop` under its directory.
 
